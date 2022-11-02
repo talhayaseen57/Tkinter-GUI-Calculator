@@ -1,12 +1,28 @@
 import tkinter as tk
 
 
+LIGHT_GRAY = "#F5F5F5"
+
 class Calculator:
     def __init__(self):
         self.window = tk.Tk()
         self.window.geometry("363x497")
         self.window.resizable(False, False)
         self.window.title("Calculator App")
+
+        self.display_frame = self.create_display_frame()
+        self.button_frame = self.create_button_frame()
+        
+    
+    def create_display_frame(self):
+        frame = tk.Frame(self.window, height=215, bg=LIGHT_GRAY)
+        frame.pack(expand=True, fill="both")
+        return frame
+        
+    def create_button_frame(self):
+        frame = tk.Frame(self.window)
+        frame.pack(expand=True, fill="both")
+        return frame
 
     def run(self):
         self.window.mainloop()
